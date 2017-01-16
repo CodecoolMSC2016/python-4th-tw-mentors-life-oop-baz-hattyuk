@@ -1,7 +1,7 @@
-# CodecoolClass
+# GetQuestions
 
 ## Description
-This class represents the mentor's attitude of the questions.
+This class represents the mentor's attitude of the different amount of questions.
 
 ## Parent class
 Mentor class
