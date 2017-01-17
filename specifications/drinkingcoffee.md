@@ -8,16 +8,9 @@ Mentor Class
 
 ## Attributes
 
-* ```energy level```
+* ```energy_level```
   * data type: integer
   * description: stores how much is a mentor energysed.
-
-
-## Class methods
-
-### ```how_many_coffe_needed```
-
-Creates a ```coffee_needed``` list, that shows each mentor how much coffee shall drink
 
 #### Arguments
 None
@@ -30,6 +23,11 @@ None
 
 ### ```__init__(Mentor)```
 The constructor of the object.
+
+### ```how_many_coffe_needed```
+
+Creates a ```coffee_needed``` list, that shows each mentor how much coffee shall drink
+
 
 #### Arguments
 
