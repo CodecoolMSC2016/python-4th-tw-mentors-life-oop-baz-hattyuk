@@ -1,4 +1,4 @@
-# GetMotivated
+# GoodMotivator
 
 ## Description
 This class represents how motivable can each mentor be

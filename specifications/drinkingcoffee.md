@@ -1,4 +1,4 @@
-# DrinkingCoffee
+# Coffeedrinkers
 
 ## Description
 This class represents how important is to start our day with coffee.
