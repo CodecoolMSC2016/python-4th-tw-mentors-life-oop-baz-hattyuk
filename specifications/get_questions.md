@@ -38,7 +38,7 @@ The constructor of the object.
 All of the arguments of the class itself.
 
 #### Return value
-list
+None
 
 ### ```depend_on_questions```
 
