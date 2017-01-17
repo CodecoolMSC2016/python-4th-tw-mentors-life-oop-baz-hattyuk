@@ -1,14 +1,16 @@
-# Mood
+# EasyGoing
 
 ## Description
-This class represents the mood of the mentors at the end of a day.
+This class represents a satisfied mentor at the end of a day.
 
 ## Parent class
 Mentor class
 
 ## Attributes
 
-None
+* ```happyness```
+  * data type: integer
+  * description: containing the numeric data of the mentor happyness.
 
 ## Instance methods
 
@@ -24,10 +26,10 @@ None
 
 ### ```calculate_mood```
 
-Calculate the average of the day, and decide it was a good or a bad day.
+Calculate the satisfiection.
 
 #### Arguments
-The result of ```depend_on_questions``` and an other integer form the list of the ```How_motivable_are_mentors```.
+None
 
 #### Return value
 Print out a string and an integer as an indicator of the mentor's satisfaction.
