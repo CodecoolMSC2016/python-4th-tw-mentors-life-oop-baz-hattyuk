@@ -4,7 +4,7 @@ import csv
 
 class Mentor(Person):
 
-    def _init__(self, nickname):
+    def __init__(self, first_name, last_name, year_of_birth, gender, nickname):
         super().__init__(first_name, last_name, year_of_birth, gender)
         self.nickname = nickname
 
@@ -14,11 +14,7 @@ class Mentor(Person):
             mentors_list = []
             data = csv.reader(csvfile)
             for row in data:
-                person = Mentor()
-                person.first_name = row[0]
-                person.last_name = row[1]
-                person.year_of_birth = row[2]
-                person.gender = row[3]
+                person = cls(row[0], row[1], row[2], row[3], row[4])
                 try:
                     person.nickname = row[4]
                 except IndexError:
@@ -28,7 +24,5 @@ class Mentor(Person):
         return mentors_list
 
 
-
 mentor1 = Mentor.create_by_csv()
-
 print(mentor1[0].first_name, mentor1[0].last_name)

@@ -1,6 +1,6 @@
 from mentor import Mentor
 
-class EasyGoing:
+class EasyGoingMentor(Mentor):
     def __init__(self, happiness):
         super().__init__(nickname)
         self.happiness = happiness

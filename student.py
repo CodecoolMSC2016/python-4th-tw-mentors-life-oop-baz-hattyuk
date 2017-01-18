@@ -4,8 +4,8 @@ import csv
 
 class Student(Person):
 
-    def __init__(self, first_name="", last_name="", year_of_birth="", gender="", knowledge_level=0, energy_level=0):
-        super().__init__()
+    def __init__(self, first_name, last_name, year_of_birth, gender, knowledge_level, energy_level):
+        super().__init__(first_name, last_name, year_of_birth, gender)
         self.knowledge_level = knowledge_level
         self.energy_level = energy_level
 
@@ -15,15 +15,12 @@ class Student(Person):
         with open("data/students.csv") as csvfile:
             data = csv.reader(csvfile)
             for row in data:
-                one_student = Student()
-                one_student.first_name = row[0]
-                one_student.last_name = row[1]
-                one_student.year_of_birth = row[2]
-                one_student.gender = row[3]
-                one_student.knowledge_level = int(row[4])
-                one_student.energy_level = int(row[5])
+                one_student = cls(row[0], row[1], row[2], row[3], int(row[4]), int(row[5]))
                 student_list.append(one_student)
                 for word in row:
                     if word == " ":
                         raise ValueError("Missing data from students.csv!")
             return student_list
+
+stud = Student.create_by_csv()
+print(stud[0].first_name, stud[0].last_name)
