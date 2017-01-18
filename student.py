@@ -23,6 +23,9 @@ class Student(Person):
                 one_student.knowledge_level = int(row[4])
                 one_student.energy_level = int(row[5])
                 student_list.append(one_student)
+                for word in row:
+                    if word == " ":
+                        raise ValueError("Missing data from students.csv!")
             return student_list
 
 
