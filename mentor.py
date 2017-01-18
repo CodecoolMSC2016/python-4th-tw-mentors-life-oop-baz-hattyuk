@@ -19,7 +19,11 @@ class Mentor(Person):
                 person.last_name = row[1]
                 person.year_of_birth = row[2]
                 person.gender = row[3]
-                person.nickname = row[4]
+                try:
+                    person.nickname = row[4]
+                except IndexError:
+                    print("No nickname found!!, for: {} {}".format(person.first_name, person.last_name))
+                    exit()
                 mentors_list.append(person)
         return mentors_list
 
