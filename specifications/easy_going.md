@@ -8,9 +8,9 @@ Mentor class
 
 ## Attributes
 
-* ```happyness```
+* ```happiness```
   * data type: integer
-  * description: containing the numeric data of the mentor happyness.
+  * description: containing the numeric data of the mentor happiness.
 
 ## Instance methods
 
@@ -26,7 +26,7 @@ None
 
 ### ```calculate_mood```
 
-Calculate the satisfiection.
+Calculate the satisfaction.
 
 #### Arguments
 None

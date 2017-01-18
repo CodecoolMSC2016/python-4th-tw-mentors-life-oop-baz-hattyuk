@@ -27,8 +27,3 @@ class Student(Person):
                     if word == " ":
                         raise ValueError("Missing data from students.csv!")
             return student_list
-
-
-student1 = Student.create_by_csv()
-
-print(student1[0].first_name, student1[0].last_name, student1[0].year_of_birth)
