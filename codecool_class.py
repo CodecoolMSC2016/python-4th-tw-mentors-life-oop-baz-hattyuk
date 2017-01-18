@@ -5,20 +5,44 @@ from student import Student
 class CodecoolClass:
 
     def __init__(self, location, year, mentors, students):
-        super().__init__(first_name, last_name, year_of_birth, gender)
+        super().__init__()
         self.location = location
         self.year = year
-        self.mentors = []
-        self.students = []
+        self.mentors = mentors
+        self.students = students
 
-    def generate_local():
-        all_class = []
+    @classmethod
+    def generate_local(cls):
+        return CodecoolClass("Miskolc", 2016, Mentor.create_by_csv(), Student.create_by_csv())
+
+    @staticmethod
+    def find_mentor_by_full_name(full_name):
+        name = full_name.split(" ")
+        first_name = name[0]
+        last_name = name[1]
+
         mentors_list = Mentor.create_by_csv()
-        students_list = Student.create_by_csv()
-        for item in mentors_list:
-            cc = CodecoolClass()
-            cc.first_name = mentors_list[0]
-            all_class.append(cc)
-        return all_class
 
-print(CodecoolClass.generate_local()[0].first_name)
+        for mentor in mentors_list:
+            if mentor.first_name == first_name and mentor.last_name == last_name:
+                return "{} {} was found in mentors".format(first_name, last_name)
+            else:
+                return "{} {} was not found in mentors".format(first_name, last_name)
+
+    @staticmethod
+    def find_student_by_full_name(full_name):
+        name = full_name.split(" ")
+        first_name = name[0]
+        last_name = name[1]
+
+        students_list = Student.create_by_csv()
+
+        for student in students_list:
+            if student.first_name == first_name and student.last_name == last_name:
+                return "{} {} was found in student".format(first_name, last_name)
+            else:
+                return "{} {} was not found in student".format(first_name, last_name)
+print(CodecoolClass.generate_local().year)
+print(CodecoolClass.find_mentor_by_full_name("Imre Lindi"))
+print(CodecoolClass.find_student_by_full_name("Ágnes Kabály"))
+print(CodecoolClass.find_student_by_full_name("Kis Pista"))

@@ -8,5 +8,9 @@ Norbert,Lugosi,1997,male,28,39
 Máté,Jakubinyi,1997,male,66,59
 Dávid,Szilágyi,1991,male,51,30
 Krisztián,Gányi,1991,male,41,34
+<<<<<<< HEAD
 László,Székely-Tóth,1997,male,85,1
+=======
+László,Székely-Tóth,1997,male,85, 1
+>>>>>>> 27ae9bc4d133c9a0cba3bbf8275354a00f2750ca
 Ágnes,Kabály,1993,female,90,56
