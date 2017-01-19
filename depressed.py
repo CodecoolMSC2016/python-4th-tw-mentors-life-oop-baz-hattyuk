@@ -16,10 +16,10 @@ class DepressedMentor(Mentor):
         mentors_list = Mentor.create_by_csv()
         for mentor in mentors_list:
             if mentor.nickname != "Atesz":
-                mentor.low_tolerance_limit = random.randint(10, 60)
+                mentor.low_tolerance_limit = random.randint(0, 20)
             else:
-                mentor.low_tolerance_limit = random.randint(0, 10)
-            if mentor.low_tolerance_limit < 11:
+                mentor.low_tolerance_limit = random.randint(0, 20)
+            if mentor.low_tolerance_limit < 10:
                 depressed_m = DepressedMentor(mentor.first_name, mentor.last_name, mentor.year_of_birth, mentor.gender, mentor.nickname, mentor.low_tolerance_limit)
                 depressed_mentors.append(depressed_m)
         return depressed_mentors
@@ -28,7 +28,7 @@ class DepressedMentor(Mentor):
     def how_many_questions():
 
         question_list = ["De hogy jönnek ide a díszlettervezők?",
-                        "Mi??? Nem figyeltem. Akkor most mi van? Mi?",
+                        "Mi??? Nem figyeltem. Akkor most mi van vagy mi?",
                         "A zártosztály is lehet osztály, ugye?",
                         "Az appenddel nyitom meg a fájlt, ugye? :O",
                         "Én néha azt sem tudom, hogy ki kihez beszél...Az most baj?"]
@@ -49,11 +49,10 @@ class DepressedMentor(Mentor):
 
     @staticmethod
     def becomes_alcoholist():
-        amount_of_alcohol = round(DepressedMentor.is_depressed()[0].low_tolerance_limit+1)
+        amount_of_alcohol = DepressedMentor.is_depressed()[0].low_tolerance_limit
         if DepressedMentor.how_many_questions() > DepressedMentor.is_depressed()[0].low_tolerance_limit:
-            print(DepressedMentor.is_depressed()[0].nickname, "tolerance limit is maximum:", DepressedMentor.is_depressed()[0].low_tolerance_limit+1, "questions.")
-            x = amount_of_alcohol + DepressedMentor.is_depressed()[0].low_tolerance_limit+1
-            print("He started to drink wine:", x, "botle/day", "and takes some xanax:", DepressedMentor.is_depressed()[0].low_tolerance_limit+1, "pill/day.")
+            x = amount_of_alcohol + DepressedMentor.is_depressed()[0].low_tolerance_limit
+            print("\nHe started to drink wine:", x, "botle/day", "and takes some xanax:", DepressedMentor.is_depressed()[0].low_tolerance_limit+2, "pill/day.")
             return "\nSo the management decided: He have to leave the codecool, as soon as it is possible!!!"
         return("\nHe almost becomes alcoholist.\nBut the management decided he have to leave the codecool! :()")
 
