@@ -51,7 +51,7 @@ def story1(choosen):
     else:
         print("\n Soo {} goes to Codecool in the weekdays.".format(choosed(choosen)))
         print("In each day, every mentor has a specific enery level. Today, {}'s energy isn't 100%,"
-              "so he needs to drink {} cups of coffee.".format(choosed_nickname(choosen), how_many_coffee))
+              "so he needs to drink {} cup(s) of coffee.".format(choosed_nickname(choosen), how_many_coffee))
         time.sleep(6)
         os.system('clear')
         print("""\
@@ -70,7 +70,7 @@ def story1(choosen):
                         """)
         for count_down in range(how_many_coffee, 0, -1):
             print(count_down)
-            time.sleep(0.5)
+            time.sleep(1)
         os.system('clear')
 
 def story2(choosen):
@@ -80,6 +80,7 @@ def story2(choosen):
     mentormot = Mentor_how_motivable.how_motivable_are_mentors(mentor_nicknames, 6, 3, 7, 6, 8, 6)
     if int(mentormot[choosen-1][::-1][0]) >= 6:
         print("\n {} can motive students, so codecoolers are happy today, and they don't lose energy.".format(choosed_nickname(choosen)))
+        time.sleep(3)
     else:
         print("\n {} can't motive students well, so codecoolers got tired of the day.".format(choosed_nickname(choosen)))
         print("\n Cause of the bad motivation, students lose energy, so now the studens has: \n")
@@ -95,23 +96,30 @@ def story2(choosen):
             students_by_energy.append(energy_levels)
         for student in students_by_energy:
             print(" ".join(student))
-        time.sleep(5)
+        time.sleep(9)
         os.system('clear')
 
 def story3(choosen):
     todays_questions = DepressedMentor.how_many_questions(DepressedMentor.is_depressed())
     print("\n During the day, {} got many questions, from coodecoolers. ".format(choosed_nickname(choosen)))
-    print("To be accurate, codecoolers asked {} questions, like: {}".format(todays_questions[choosen-1][1], todays_questions[choosen-1][2]))
-    if todays_questions[choosen-1][1] > 50:
-        print("{} thinks, that this is too much for him for a day.".format(choosed_nickname(choosen)))
-    else:
-        print("{} think, that he can still tolerate this.".format(choosed_nickname(choosen)))
+    for mentor in range(len(todays_questions)):
+        if todays_questions[mentor][0] == choosed_nickname(choosen):
+            print("To be accurate, codecoolers asked {} questions, like: {}".format(todays_questions[mentor][1], todays_questions[mentor][2]))
+            if todays_questions[mentor][1] > 70:
+                print("{} thinks, that this is too much for him for a day.".format(choosed_nickname(choosen)))
+            else:
+                print("{} think, that he can still tolerate this.".format(choosed_nickname(choosen)))
+            time.sleep(3)
+
+
     depressed_mentor = DepressedMentor.becomes_alcoholist(DepressedMentor.is_depressed())
     get_alcoholist = "good"
     for mentor_index in range(len(depressed_mentor)):
         if depressed_mentor[mentor_index][0] == choosed_nickname(choosen):
             get_alcoholist = "bad"
     print("\n Usually at the end of the day, mentors can feel good(happy) or bad(depressed). Depended on this day,{} feels {}.".format(choosed_nickname(choosen), get_alcoholist))
+    time.sleep(3)
+
 
     if get_alcoholist == "bad":
         print("\n Because of this feel, he started to drink wine {} bottles/day, nad takes some xanax: {} pill/day.".format(randint(1,5), randint(1,5)))
@@ -119,3 +127,15 @@ def story3(choosen):
     if get_alcoholist == "good":
         mentor_happiness = EasyGoingMentor.create_object()[choosen-1].happiness
         print("\n This day was good for {}, so he has calender, where he always write's how happy is he at the end of the day, he wrote {}.".format(choosed_nickname(choosen), mentor_happiness))
+
+def search_in_class(answer):
+    if answer == "y" or answer == "Y":
+        answer_class = input("Do you wanna search a student or mentor?")
+        if answer_class == "mentor":
+            name = input("Give a name, what you want to search: ")
+            CodecoolClass.find_mentor_by_full_name(name)
+        if answer_class == "student":
+            name = input("Give a name, what you want to search: ")
+            CodecoolClass.find_student_by_full_name(name)
+    else:
+        pass

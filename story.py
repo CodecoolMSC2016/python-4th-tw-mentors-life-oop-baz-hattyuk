@@ -15,6 +15,11 @@ codecool_msc = CodecoolClass.generate_local()
 
 
 def main():
+    answer = input("Do you wanna search for mentor or student? If yes press y: ")
+    while answer == "y" or answer == "Y":
+        search_in_class(answer)
+        answer = input("Do you wanna search again? If yes press y: ")
+    os.system('clear')
     choosing_menu()
     choosen = int(input("Choose a mentor, who's day you want to have a sneak peak!  "))
     choosed(choosen)
@@ -22,6 +27,7 @@ def main():
     story1(choosen)
     story2(choosen)
     story3(choosen)
+
 
 if __name__ == "__main__":
     main()
