@@ -79,10 +79,10 @@ def story2(choosen):
     mentor_nicknames = Mentor_how_motivable.get_nickname()
     mentormot = Mentor_how_motivable.how_motivable_are_mentors(mentor_nicknames, 6, 3, 7, 6, 8, 6)
     if int(mentormot[choosen-1][::-1][0]) >= 6:
-        print("{} can motive students, so codecoolers are happy today, and they don't lose energy.".format(choosed_nickname(choosen)))
+        print("\n {} can motive students, so codecoolers are happy today, and they don't lose energy.".format(choosed_nickname(choosen)))
     else:
-        print("{} can't motive students well, so codecoolers got tired of the day.".format(choosed_nickname(choosen)))
-        print("Cause of the bad motivation, students lose energy, so now the studens has: \n")
+        print("\n {} can't motive students well, so codecoolers got tired of the day.".format(choosed_nickname(choosen)))
+        print("\n Cause of the bad motivation, students lose energy, so now the studens has: \n")
         students_energy_level = Student.create_by_csv()
         students_by_energy = []
         for student in students_energy_level:
@@ -95,5 +95,27 @@ def story2(choosen):
             students_by_energy.append(energy_levels)
         for student in students_by_energy:
             print(" ".join(student))
-    time.sleep(5)
-    os.system('clear')
+        time.sleep(5)
+        os.system('clear')
+
+def story3(choosen):
+    todays_questions = DepressedMentor.how_many_questions(DepressedMentor.is_depressed())
+    print("\n During the day, {} got many questions, from coodecoolers. ".format(choosed_nickname(choosen)))
+    print("To be accurate, codecoolers asked {} questions, like: {}".format(todays_questions[choosen-1][1], todays_questions[choosen-1][2]))
+    if todays_questions[choosen-1][1] > 50:
+        print("{} thinks, that this is too much for him for a day.".format(choosed_nickname(choosen)))
+    else:
+        print("{} think, that he can still tolerate this.".format(choosed_nickname(choosen)))
+    depressed_mentor = DepressedMentor.becomes_alcoholist(DepressedMentor.is_depressed())
+    get_alcoholist = "good"
+    for mentor_index in range(len(depressed_mentor)):
+        if depressed_mentor[mentor_index][0] == choosed_nickname(choosen):
+            get_alcoholist = "bad"
+    print("\n Usually at the end of the day, mentors can feel good(happy) or bad(depressed). Depended on this day,{} feels {}.".format(choosed_nickname(choosen), get_alcoholist))
+
+    if get_alcoholist == "bad":
+        print("\n Because of this feel, he started to drink wine {} bottles/day, nad takes some xanax: {} pill/day.".format(randint(1,5), randint(1,5)))
+        print("Such a sad story, but the management thought, he need to leave codecool!! BYE BYE")
+    if get_alcoholist == "good":
+        mentor_happiness = EasyGoingMentor.create_object()[choosen-1].happiness
+        print("\n This day was good for {}, so he has calender, where he always write's how happy is he at the end of the day, he wrote {}.".format(choosed_nickname(choosen), mentor_happiness))

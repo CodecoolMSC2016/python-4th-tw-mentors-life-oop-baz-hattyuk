@@ -14,7 +14,6 @@ from random import randint
 codecool_msc = CodecoolClass.generate_local()
 
 
-
 def main():
     choosing_menu()
     choosen = int(input("Choose a mentor, who's day you want to have a sneak peak!  "))
@@ -22,5 +21,7 @@ def main():
     choosed_nickname(choosen)
     story1(choosen)
     story2(choosen)
+    story3(choosen)
 
-main()
+if __name__ == "__main__":
+    main()

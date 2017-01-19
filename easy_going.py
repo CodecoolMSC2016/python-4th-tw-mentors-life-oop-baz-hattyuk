@@ -1,4 +1,5 @@
 from mentor import Mentor
+from random import randint
 
 
 class EasyGoingMentor(Mentor):
@@ -10,6 +11,17 @@ class EasyGoingMentor(Mentor):
     @property
     def fullname(self):
         return self.first_name + " " + self.last_name
+
+
+    @staticmethod
+    def create_object():
+        mentors_list = Mentor.create_by_csv()
+        mentor_object_list = []
+        for mentor in mentors_list:
+            mentor.happiness = randint(5,10)
+            objectum = EasyGoingMentor(mentor.first_name, mentor.last_name, mentor.year_of_birth, mentor.gender, mentor.nickname, mentor.happiness)
+            mentor_object_list.append(objectum)
+        return mentor_object_list
 
 
 
@@ -27,9 +39,5 @@ szodi = EasyGoingMentor(szodi.first_name, szodi.last_name, szodi.year_of_birth, 
 robi = EasyGoingMentor(robi.first_name, robi.last_name, robi.year_of_birth, robi.gender, robi.nickname, 8)
 pako = EasyGoingMentor(pako.first_name, pako.last_name, pako.year_of_birth, pako.gender, pako.nickname, 7)
 
-print(peba.nickname + "'s happiness is " + str(peba.happiness))
-print(atesz.nickname + "'s happiness is " + str(atesz.happiness))
-print(imi.nickname + "'s happiness is " + str(imi.happiness))
-print(szodi.nickname + "'s happiness is " + str(szodi.happiness))
-print(robi.nickname + "'s happiness is " + str(robi.happiness))
-print(pako.nickname + "'s happiness is " + str(pako.happiness))
+
+#print(EasyGoingMentor.create_object()[0].happiness)
