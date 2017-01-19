@@ -17,7 +17,7 @@ class Coffeedrinkers(Mentor):
             mentor.energy_level = randint(0,99)
             one_cup_coffee = 10
             needed = (100-mentor.energy_level) // 10
-            name = "{} {}". format(mentor.first_name, mentor.last_name)
+            name = "{} {}".format(mentor.first_name, mentor.last_name)
             mentor_dict[name] = needed
         return mentor_dict
 
