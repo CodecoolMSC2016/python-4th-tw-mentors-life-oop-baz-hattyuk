@@ -24,5 +24,5 @@ class Mentor(Person):
         return mentors_list
 
 
-mentor1 = Mentor.create_by_csv()
-print(mentor1[0].first_name, mentor1[0].last_name)
+#mentor1 = Mentor.create_by_csv()
+#print(mentor1[0].first_name, mentor1[0].last_name)

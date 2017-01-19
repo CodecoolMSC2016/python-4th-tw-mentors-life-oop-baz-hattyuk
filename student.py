@@ -22,5 +22,5 @@ class Student(Person):
                         raise ValueError("Missing data from students.csv!")
             return student_list
 
-stud = Student.create_by_csv()
-print(stud[0].first_name, stud[0].last_name)
+#stud = Student.create_by_csv()
+#print(stud[0].first_name, stud[0].last_name)

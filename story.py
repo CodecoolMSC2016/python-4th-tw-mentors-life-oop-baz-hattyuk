@@ -6,3 +6,7 @@ from easy_going import EasyGoingMentor
 
 
 codecool_msc = CodecoolClass.generate_local()
+
+
+def main():
+    pass
