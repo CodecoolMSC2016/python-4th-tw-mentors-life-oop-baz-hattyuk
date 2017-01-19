@@ -49,7 +49,7 @@ def story1(choosen):
         time.sleep(2)
         os.system('clear')
     else:
-        print("\n Soo {} goes to Codecool in the weekdays.".format(choosed(choosen)))
+        print("\nSoo {} goes to Codecool in the weekdays.".format(choosed(choosen)))
         print("In each day, every mentor has a specific enery level. Today, {}'s energy isn't 100%,"
               "so he needs to drink {} cup(s) of coffee.".format(choosed_nickname(choosen), how_many_coffee))
         time.sleep(6)
@@ -79,11 +79,11 @@ def story2(choosen):
     mentor_nicknames = Mentor_how_motivable.get_nickname()
     mentormot = Mentor_how_motivable.how_motivable_are_mentors(mentor_nicknames, 6, 3, 7, 6, 8, 6)
     if int(mentormot[choosen-1][::-1][0]) >= 6:
-        print("\n {} can motive students, so codecoolers are happy today, and they don't lose energy.".format(choosed_nickname(choosen)))
+        print("\n{} can motive students, so codecoolers are happy today, and they don't lose energy.".format(choosed_nickname(choosen)))
         time.sleep(3)
     else:
-        print("\n {} can't motive students well, so codecoolers got tired of the day.".format(choosed_nickname(choosen)))
-        print("\n Cause of the bad motivation, students lose energy, so now the studens has: \n")
+        print("\n{} can't motive students well, so codecoolers got tired of the day.".format(choosed_nickname(choosen)))
+        print("\nCause of the bad motivation, students lose energy, so now the studens has: \n")
         students_energy_level = Student.create_by_csv()
         students_by_energy = []
         for student in students_energy_level:
@@ -101,14 +101,14 @@ def story2(choosen):
 
 def story3(choosen):
     todays_questions = DepressedMentor.how_many_questions(DepressedMentor.is_depressed())
-    print("\n During the day, {} got many questions, from coodecoolers. ".format(choosed_nickname(choosen)))
+    print("During the day, {} got many questions, from coodecoolers. ".format(choosed_nickname(choosen)))
     for mentor in range(len(todays_questions)):
         if todays_questions[mentor][0] == choosed_nickname(choosen):
-            print("To be accurate, codecoolers asked {} questions, like: {}".format(todays_questions[mentor][1], todays_questions[mentor][2]))
+            print("\nTo be accurate, codecoolers asked {} questions, like: {}".format(todays_questions[mentor][1], todays_questions[mentor][2]))
             if todays_questions[mentor][1] > 70:
-                print("{} thinks, that this is too much for him for a day.".format(choosed_nickname(choosen)))
+                print("\n{} thinks, that this is too much for him for a day.".format(choosed_nickname(choosen)))
             else:
-                print("{} think, that he can still tolerate this.".format(choosed_nickname(choosen)))
+                print("\n{} think, that he can still tolerate this.".format(choosed_nickname(choosen)))
             time.sleep(3)
 
 
@@ -117,16 +117,16 @@ def story3(choosen):
     for mentor_index in range(len(depressed_mentor)):
         if depressed_mentor[mentor_index][0] == choosed_nickname(choosen):
             get_alcoholist = "bad"
-    print("\n Usually at the end of the day, mentors can feel good(happy) or bad(depressed). Depended on this day,{} feels {}.".format(choosed_nickname(choosen), get_alcoholist))
+    print("\nUsually at the end of the day, mentors can feel good(happy) or bad(depressed). Depended on this day, {} feels {}.".format(choosed_nickname(choosen), get_alcoholist))
     time.sleep(3)
 
 
     if get_alcoholist == "bad":
-        print("\n Because of this feel, he started to drink wine {} bottles/day, nad takes some xanax: {} pill/day.".format(randint(1,5), randint(1,5)))
-        print("Such a sad story, but the management thought, he need to leave codecool!! BYE BYE")
+        print("\nBecause of this feel, he started to drink wine: {} bottles/day, and takes some xanax: {} pill/day.".format(randint(1,5), randint(1,5)))
+        print("\nSuch a sad story, but the management thought, he need to leave codecool!! BYE BYE")
     if get_alcoholist == "good":
         mentor_happiness = EasyGoingMentor.create_object()[choosen-1].happiness
-        print("\n This day was good for {}, so he has calender, where he always write's how happy is he at the end of the day, he wrote {}.".format(choosed_nickname(choosen), mentor_happiness))
+        print("\nThis day was good for {}, so he has calender, where he always write's how happy is he at the end of the day, he wrote {}.".format(choosed_nickname(choosen), mentor_happiness))
 
 def search_in_class(answer):
     if answer == "y" or answer == "Y":
