@@ -17,19 +17,13 @@ Mentor class
 ### ```__init__(Mentor)```
 The constructor of the object.
 
-#### Arguments
+## Static methods
 
-None
-
-#### Return value
-None
-
-### ```calculate_mood```
-
-Calculate the satisfaction.
+### ```create_object```
+Shows each mentor's happiness.
 
 #### Arguments
-None
+mentor object
 
 #### Return value
 Print out a string and an integer as an indicator of the mentor's satisfaction.

@@ -12,26 +12,19 @@ Mentor Class
   * data type: integer
   * description: stores how much is a mentor energysed.
 
-#### Arguments
-None
-
-#### Return value
-
-```coffee_needed``` list
-
 ## Instance methods
 
 ### ```__init__(Mentor)```
 The constructor of the object.
 
-### ```how_many_coffe_needed```
+## Static menthods
 
-Creates a ```coffee_needed``` list, that shows each mentor how much coffee shall drink
+### ```coffe_needed```
+Creates a ```mentor_dict``` dictionary, that shows each mentor how much coffee shall drink
 
 
 #### Arguments
-
-All of the arguments of the class itself.
+mentor object
 
 #### Return value
 list

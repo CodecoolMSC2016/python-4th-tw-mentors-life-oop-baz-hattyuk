@@ -1,4 +1,4 @@
-# GoodMotivator
+# Mentor_how_motivable
 
 ## Description
 This class represents how motivable can each mentor be
@@ -12,25 +12,25 @@ Mentor class
   * data type: integer
   * description: stores how motivable are mentors in 0-10 scale. If Motivation_skillis under a specific value, students energy get lower
 
-#### Arguments
-None
-
-#### Return value
-
-```how_motivable``` list
-
 ## Instance methods
 
 ### ```__init__(Mentor)```
 The constructor of the object.
 
-### ```How_motivable_are_mentors```
+## Class methods
 
-Creates a ```how_motivable``` list, that shows, each mentor how motivable can be.
+### ```how_motivable_are_mentors()```
+Shows how motivable a mentor can be - creates list
+
+## Staic methods
+
+### ```get_nickname()```
+gets out the nickname
+
 
 #### Arguments
 
-All of the arguments of the class itself.
+mentor object
 
 #### Return value
 list
