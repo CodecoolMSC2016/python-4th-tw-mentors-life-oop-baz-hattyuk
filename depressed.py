@@ -49,7 +49,7 @@ class DepressedMentor(Mentor):
 
     @staticmethod
     def becomes_alcoholist():
-        amount_of_alcohol = DepressedMentor.is_depressed()[0].low_tolerance_limit+1
+        amount_of_alcohol = DepressedMentor.is_depressed()[0].low_tolerance_limit+2
         if DepressedMentor.how_many_questions() > DepressedMentor.is_depressed()[0].low_tolerance_limit:
             x = amount_of_alcohol + DepressedMentor.is_depressed()[0].low_tolerance_limit
             print("\nHe started to drink wine:", x, "botle/day", "and takes some xanax:", DepressedMentor.is_depressed()[0].low_tolerance_limit, "pill/day.")
