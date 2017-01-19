@@ -47,4 +47,3 @@ class Mentor_how_motivable(Mentor):
 Mentor_how_motivable.get_nickname()
 mentor_nicknames = Mentor_how_motivable.get_nickname()
 mentormot = Mentor_how_motivable.how_motivable_are_mentors(mentor_nicknames, 5, 10, 7, 6, 8, 6)
-print(mentormot)
