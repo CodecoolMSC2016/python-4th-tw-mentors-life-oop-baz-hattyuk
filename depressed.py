@@ -10,19 +10,16 @@ class DepressedMentor(Mentor):
     def fullname(self):
         return self.first_name + " " + self.last_name
 
-    def is_depressed(self):
-        in_the_class = ""
-        not_in_this_class = []
-        not_in_this_class.append("They are not in the depressed mentor class:")
+    @staticmethod
+    def is_depressed():
+        depressed_mentors = []
         mentors_list = Mentor.create_by_csv()
         for mentor in mentors_list:
-            if mentor.nickname != "Atesz":
-                not_in_this_class.append(mentor.nickname)
-            else:
-                in_the_class += mentor.nickname
-                in_the_class += " is in the depressed mentor class!"
-        print(not_in_this_class)
-        return "{} is in the depressed mentor class.".format(atesz.nickname)
+            mentor.low_tolerance_limit = random.randint(0, 20)
+            if mentor.low_tolerance_limit < 9:
+                depressed_m = DepressedMentor(mentor.first_name, mentor.last_name, mentor.year_of_birth, mentor.gender, mentor.nickname, mentor.low_tolerance_limit)
+                depressed_mentors.append(depressed_m)
+        return depressed_mentors
 
     @staticmethod
     def how_many_questions():
@@ -56,12 +53,3 @@ class DepressedMentor(Mentor):
             print("He started to wine:", x, "botle of beer/day", "and takes some xanax:", low_tolerance_limit, "pill/day.")
             return "\nSo the management decided: He have to leave the codecool, as soon as it is possible!!!"
         return("\nHe almost becomes alcoholist.\nBut the management decided he have to leave the codecool! :()")
-
-
-
-
-atesz = DepressedMentor("Attila", "Molnár", 1989, "Male", "Atesz", random.randint(0, 20))
-print(atesz.is_depressed())
-#print("Type of Atesz:", type(atesz))
-##print(atesz.how_many_questions())
-#print(atesz.becomes_alcoholist(random.randint(0, 20)))
