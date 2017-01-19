@@ -19,7 +19,7 @@ class DepressedMentor(Mentor):
                 mentor.low_tolerance_limit = random.randint(0, 20)
             else:
                 mentor.low_tolerance_limit = random.randint(0, 20)
-            if mentor.low_tolerance_limit < 10:
+            if mentor.low_tolerance_limit < 14:
                 depressed_m = DepressedMentor(mentor.first_name, mentor.last_name, mentor.year_of_birth, mentor.gender, mentor.nickname, mentor.low_tolerance_limit)
                 depressed_mentors.append(depressed_m)
         return depressed_mentors
@@ -49,10 +49,10 @@ class DepressedMentor(Mentor):
 
     @staticmethod
     def becomes_alcoholist():
-        amount_of_alcohol = DepressedMentor.is_depressed()[0].low_tolerance_limit
+        amount_of_alcohol = DepressedMentor.is_depressed()[0].low_tolerance_limit+1
         if DepressedMentor.how_many_questions() > DepressedMentor.is_depressed()[0].low_tolerance_limit:
             x = amount_of_alcohol + DepressedMentor.is_depressed()[0].low_tolerance_limit
-            print("\nHe started to drink wine:", x, "botle/day", "and takes some xanax:", DepressedMentor.is_depressed()[0].low_tolerance_limit+2, "pill/day.")
+            print("\nHe started to drink wine:", x, "botle/day", "and takes some xanax:", DepressedMentor.is_depressed()[0].low_tolerance_limit, "pill/day.")
             return "\nSo the management decided: He have to leave the codecool, as soon as it is possible!!!"
         return("\nHe almost becomes alcoholist.\nBut the management decided he have to leave the codecool! :()")
 
