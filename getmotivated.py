@@ -38,12 +38,4 @@ class Mentor_how_motivable(Mentor):
                 how_motivable.append(name + "'s motivation skill is: " + str(pako_mot_skill))
             else:
                 how_motivable.append("Unknown mentor added to list")
-        return "\n".join(how_motivable)
-        
-
-
-
-
-Mentor_how_motivable.get_nickname()
-mentor_nicknames = Mentor_how_motivable.get_nickname()
-mentormot = Mentor_how_motivable.how_motivable_are_mentors(mentor_nicknames, 5, 10, 7, 6, 8, 6)
+        return how_motivable

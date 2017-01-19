@@ -42,7 +42,3 @@ class CodecoolClass:
                 return "{} {} was found in student".format(first_name, last_name)
             else:
                 return "{} {} was not found in student".format(first_name, last_name)
-print(CodecoolClass.generate_local().year)
-print(CodecoolClass.find_mentor_by_full_name("Imre Lindi"))
-print(CodecoolClass.find_student_by_full_name("Ágnes Kabály"))
-print(CodecoolClass.find_student_by_full_name("Kis Pista"))

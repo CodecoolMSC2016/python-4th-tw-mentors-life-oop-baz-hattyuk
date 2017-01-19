@@ -10,18 +10,19 @@ class Coffeedrinkers(Mentor):
 
     @staticmethod
     def coffee_needed():
-        coffee_needed_permentors = []
         mentors_list = Mentor.create_by_csv()
         mentor_dict = {}
         for mentor in mentors_list:
-            mentor.energy_level = randint(0,99)
-            one_cup_coffee = 10
-            needed = (100-mentor.energy_level) // 10
+            mentor.energy_level = randint(0,10)
+            one_cup_coffee = 2
+            needed = (10-mentor.energy_level) // one_cup_coffee
             name = "{} {}".format(mentor.first_name, mentor.last_name)
-            mentor_dict[name] = needed
+            if needed != 0:
+                mentor_dict[name] = needed
+            #coffee_drinker_object = []
+            #objectum = Coffeedrinkers(mentor.first_name, mentor.last_name, mentor.year_of_birth, mentor.gender, mentor.nickname, mentor.energy_level)
+            #coffee_driker_object.append(objectum)
         return mentor_dict
 
 
-lista = Coffeedrinkers.coffee_needed()
-print(lista)
-print(lista["Attila Molnár"])
+print(Coffeedrinkers.coffee_needed())
